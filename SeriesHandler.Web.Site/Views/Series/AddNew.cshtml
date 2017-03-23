@@ -1,0 +1,28 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    @{
+        var scripts = new string[] { "datepicker.js", "seriesInput.js", "inputControls.js" };
+        foreach (var script in scripts)
+        {
+            @Scripts.Render("~/Scripts/custom/" + script);
+        }
+    }
+    @Styles.Render("~/Content/custom.css") 
+</asp:Content>
+<div id="root">
+
+</div>
+<script>
+
+    var data = {}
+    ReactDOM.render(React.createElement(SeriesForm,
+        {
+            value: data,
+            onChange: function (contact) { console.log(contact) }
+
+        }), document.getElementById("root"));
+</script>
