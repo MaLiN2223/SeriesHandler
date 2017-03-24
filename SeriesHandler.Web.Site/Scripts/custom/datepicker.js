@@ -1,3 +1,4 @@
+var Calendar = 
 var DatePicker = React.createClass({
     displayName: 'DatePicker',
     getInitialState: function () {
@@ -14,11 +15,14 @@ var DatePicker = React.createClass({
         return form.replace("yyyy", yyyy).replace("mm", mm).replace("dd", dd);
     },
     onBlur: function () {
-
+        console.log("Blurred");
     },
     onChange: function (text) {
         text = text.target.value;
         console.log(text);
+    },
+    onClick : function (){
+        console.log("Clicked");
     },
     render: function () {
         return React.createElement(
@@ -29,7 +33,8 @@ var DatePicker = React.createClass({
                     placeholder: this.todayDate(),
                     value: this.state.value,
                     onBlur: this.onBlur,
-                    onChange: this.onChange
+                    onChange: this.onChange,
+                    onClick : this.onClick
                 })
         );
     }
