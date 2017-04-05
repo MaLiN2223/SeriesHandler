@@ -9,7 +9,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{B784F46D-EA11-411E-ADFA-5C02A9B536F2}</ProjectGuid>
+    <ProjectGuid>{94040529-BE7E-429E-8333-FFF3D6440099}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -194,29 +194,29 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Scripts\custom\datepicker.js" />
-    <Content Include="Scripts\custom\inputControls.js" />
-    <Content Include="Scripts\custom\seriesInput.js" />
-    <Content Include="Scripts\custom\table.js" />
-    <Content Include="Scripts\jquery-1.10.2.js" />
-    <Content Include="Scripts\jquery-1.10.2.min.js" />
-    <None Include="Scripts\jquery.validate-vsdoc.js" />
-    <Content Include="Scripts\jquery.validate.js" />
-    <Content Include="Scripts\jquery.validate.min.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\custom\series\index.js" />
+    <Content Include="Scripts\custom\series\inputControls.js" />
+    <Content Include="Scripts\custom\series\seriesInput.js" />
+    <Content Include="Scripts\custom\series\seriesTable.js" />
+    <Content Include="Scripts\libs\bootstrap.js" />
+    <Content Include="Scripts\libs\bootstrap.min.js" />
+    <None Include="Scripts\libs\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\libs\jquery-1.10.2.js" />
+    <Content Include="Scripts\libs\jquery-1.10.2.min.js" />
+    <None Include="Scripts\libs\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\libs\jquery.validate.js" />
+    <Content Include="Scripts\libs\jquery.validate.min.js" />
+    <Content Include="Scripts\libs\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\libs\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\libs\react-dom.js" />
     <Content Include="Scripts\libs\react.js" />
     <Content Include="Scripts\libs\require.js" />
-    <Content Include="Scripts\modernizr-2.6.2.js" />
-    <Content Include="Scripts\respond.js" />
-    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\libs\respond.js" />
+    <Content Include="Scripts\libs\respond.min.js" />
+    <Content Include="webpack.config.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -251,7 +251,10 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="package.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\libs\jquery-1.10.2.min.map" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

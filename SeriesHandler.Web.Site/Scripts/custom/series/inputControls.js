@@ -1,4 +1,10 @@
-"use strict";
+
+import DatePicker from 'react-datepicker';
+import moment from 'moment';
+require('react-datepicker/dist/react-datepicker.css');
+
+
+
 
 var InputRow = React.createClass({
     displayName: "InputRow",
@@ -43,8 +49,29 @@ var DatePickerRow = React.createClass({
     displayName: "DatePickerRow",
     getInitialState: function () {
         return {
-            value: ""
+            value: "",
+            date: ""
         }
+    },
+    getCurrentDate: function () {
+        var now = new Date();
+        var dd = now.getDate();
+        var mm = now.getMonth() + 1;
+        var yyyy = now.getFullYear();
+
+        if (dd < 10) {
+            dd = '0' + dd;
+        }
+        if (mm < 10) {
+            mm = '0' + mm;
+        }
+
+        return yyyy + "-" + mm + "-" + dd;
+    },
+    changed: function (date) {
+        this.setState({
+            date: date
+        });
     },
     render: function () {
         return React.createElement("div",
@@ -54,11 +81,17 @@ var DatePickerRow = React.createClass({
                 this.props.labelText),
             React.createElement(DatePicker,
                 {
-                    
+                    selected: this.state.date,
+                    onChange: this.changed,
+                    peekNextMonth: true,
+                    showMonthDropdown: true,
+                    showYearDropdown: true,
+                    dropdownMode: "select"
                 })
         );
     }
 });
+
 var TextAreaRow = React.createClass({
     displayName: "TextAreaRow",
     onChange: function (text) {
@@ -97,3 +130,5 @@ var TextAreaRow = React.createClass({
         );
     }
 });
+
+export { InputRow, DatePickerRow, TextAreaRow };

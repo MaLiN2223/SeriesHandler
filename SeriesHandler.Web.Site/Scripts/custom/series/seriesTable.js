@@ -1,4 +1,20 @@
 
+var SingleSeries = React.createClass({
+
+    displayName: "SingleSeries",
+    propTypes: {
+        title: React.PropTypes.string.isRequired
+    },
+    render: function () {
+        return React.createElement(
+            "tr", null,
+            React.createElement("td", null, this.props.title),
+            React.createElement("td", null, this.props.year)
+        );
+    }
+});
+
+
 function Series(title, year, id) {
     this.title = title;
     this.year = year;
@@ -56,21 +72,6 @@ var SeriesTable = React.createClass({
                 null,
                 rows
             )
-        );
-    }
-});
-
-var SingleSeries = React.createClass({
-
-    displayName: "SingleSeries",
-    propTypes: {
-        title: React.PropTypes.string.isRequired
-    },
-    render: function () {
-        return React.createElement(
-            "tr", null,
-            React.createElement("td", null, this.props.title),
-            React.createElement("td", null, this.props.year)
         );
     }
 });

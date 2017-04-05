@@ -1,4 +1,6 @@
 ﻿"use strict";
+import { InputRow, DatePickerRow, TextAreaRow } from "./inputControls";
+
 const APIURL = "http://localhost:5524/api/Series/";
 function seriesData() {
     this.title = "";
@@ -48,21 +50,6 @@ var SeriesForm = React.createClass({
             return value;
         };
     },
-    isNumeric: function (value) {
-        let newText = '';
-        let numbers = '0123456789';
-
-        for (var i = 0; i < text.length; i++) {
-            if (numbers.indexOf(text[i] > -1)) {
-                newText = newText + text[i];
-            }
-            else {
-                // your call back function
-                alert("please enter numbers only");
-            }
-            this.setState({ myNumber: newText });
-        }
-    },
     handleNumericFieldChange: function (fieldId) {
         var q = this;
         return function (value) {
@@ -111,3 +98,4 @@ var SeriesForm = React.createClass({
         );
     }
 });
+export default SeriesForm;  
