@@ -18,12 +18,19 @@ namespace SeriesHandler.Web.Site
             // ready for production, use the build tool at https://modernizr.com to pick only the tests you need.
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                         "~/Scripts/modernizr-*"));
+              
+
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
 
-            bundles.Add(new StyleBundle("~/Content/css").Include(
+            bundles.Add(new ScriptBundle("~/bundles/react").Include(
+                "~/Scripts/libs/react.js",
+                "~/Scripts/libs/react-dom.js",
+                "~/Scripts/libs/require.js"));
+
+            bundles.Add(new StyleBundle("~/bundles/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
         }
