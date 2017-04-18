@@ -1,28 +1,36 @@
-﻿"use strict";
+/// <binding BeforeBuild='Run - Production, Run - Development' />
+var webpack = require('webpack');
+var path = require('path'); 
 
-module.exports = {
-    entry: {
-        //main: "./index.js",
-        series: "./Scripts/custom/series/index.js"
-    }
-    ,
+var BUILD_DIR = path.resolve(__dirname, 'wwwroot/client-js/');
+var APP_DIR = path.resolve(__dirname, 'wwwroot/js/');
+
+var config = {
+    entry: { 
+        series:APP_DIR + "/series/index.jsx"
+    },
     output: {
-        filename: "Scripts/custom/[name]-bundle.js"
+        path: path.join(__dirname, 'wwwroot/client-js/'),
+        filename: "[name].js"
     },
     module: {
         loaders: [
             {
-                test: /\.js$/,
-                loader: "babel-loader",
+                test: /.jsx?$/,
+                loader: 'babel-loader',
                 exclude: /node_modules/,
                 query: {
-                    presets: ["es2015", "react"]
+                    presets: ['es2015', 'react']
                 }
-            },
-            {
-                test: /\.css$/,
-                loader: "style-loader!css-loader"
-            },
+            }
         ]
+    },
+    externals: {
+        'react': 'React'
+    },
+    resolve: {
+        extensions: ['.js', '.jsx']
     }
 };
+
+module.exports = config;

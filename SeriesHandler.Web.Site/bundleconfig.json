@@ -1,0 +1,42 @@
+﻿[
+    {
+        "outputFileName": "wwwroot/css/site.min.css",
+        "inputFiles": [
+            "wwwroot/css/site.css"
+        ]
+    },
+    {
+        "outputFileName": "wwwroot/css/home.min.css",
+        "inputFiles": [ "wwwroot/css/home.css" ],
+        "minify": {
+            "enabled": true,
+            "renameLocals": true
+        }
+    },
+    {
+        "outputFileName": "wwwroot/css/series/series.min.css",
+        "inputFiles": [ "wwwroot/css/series.css" ],
+        "minify": {
+            "enabled": true,
+            "renameLocals": true
+        }
+    },
+    {
+        "outputFileName": "wwwroot/css/series/series.css",
+        "inputFiles": [ "wwwroot/css/series/table.css" ],
+        "minify": {
+            "enabled": false,
+            "renameLocals": true
+        }
+    },
+    {
+        "outputFileName": "wwwroot/client-js/series.js", 
+        "inputFiles": [
+            "wwwroot/client-js/series.min.js"
+        ],
+        "minify": {
+            "enabled": true,
+            "renameLocals": true
+        }, 
+    }
+]

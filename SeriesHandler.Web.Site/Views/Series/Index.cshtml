@@ -1,22 +1,35 @@
-﻿@{
-    ViewBag.Title = "Series";
+
+@{
+    ViewData["Title"] = "Index";
 }
-
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    @{
-        var scripts = new string[] { "seriesTable.js" };
-        foreach (var script in scripts)
-        {
-            @Scripts.Render("~/Scripts/custom/series/" + script);
-        }
+<environment names="Development">
+    @section Styles{
+        <link rel="stylesheet" href="~/css/series/series.css" asp-append-version="true" />
     }
+    @section Scripts
+    {
+        <script src="~/lib/react/react.js"></script>
+        <script src="~/lib/react/react-dom.js"></script>
+        <script src="~/client-js/series.js"></script>
+    }
+</environment>
 
-</asp:Content>
+<environment names="Staging,Production">
+    @section Styles{
+        <link rel="stylesheet" href="~/css/series/series.min.css" asp-append-version="true" />
+    }
+    @section Scripts
+    {
+        <script src="~/lib/react/react.min.js"></script>
+        <script src="~/lib/react/react-dom.min.js"></script>
+        <script src="~/client-js/series.min.js"></script>
+    }
+</environment>
+
+<h2>Index</h2>
+
 <div id="root">
 
+</div>  <div id="app">
+    <!-- pre-rendered markup of your JavaScript app (see isomorphic apps) -->
 </div>
-<script>
-    console.log("Rendering");
-    ReactDOM.render(React.createElement(SeriesTable, null), document.getElementById("root"));
-
-</script>
