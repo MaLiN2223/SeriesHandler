@@ -253,4 +253,4 @@ paket-files/
 
 
 #OWN
-wwwroot/lib
+SeriesHandler.Web.Site/wwwroot/lib/
